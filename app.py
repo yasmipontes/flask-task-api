@@ -14,6 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # --- MODELO (BANCO DE DADOS) ---
+# ORM, representação orientada a objetos da tabela.
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -31,7 +32,7 @@ with app.app_context():
     db.create_all()
 
 # --- ROTAS (API) ---
-
+#endpoints, padrão REST, POST: eu recebe o payload em JSON, valida, e uso a sessão do banco, salva tudo ou nada
 @app.route('/tasks', methods=['POST'])
 def add_task():
     """Cria uma nova tarefa no banco de dados"""
