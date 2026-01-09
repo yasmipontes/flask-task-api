@@ -18,7 +18,7 @@ Este projeto simula o back-end de uma aplicação real, pronta para ser consumid
 
 Durante o desenvolvimento, tomei decisões focadas em **escalabilidade** e **manutenibilidade**:
 
-* **Microframework Flask:** Escolhido por ser leve e permitir controle total e serr bem flexivel.
+* **Microframework Flask:** Escolhido por ser leve e permitir controle total e ser bem flexivel.
 * **SQLAlchemy (ORM):** Utilizado para abstrair a camada de banco de dados. Ao manipular objetos Python em vez de SQL puro, aumentamos a segurança e facilita a manutenção do código.
 * **Design Pattern:** O código foi estruturado separando o **Modelo de Dados** (Representação da Tabela) das **Rotas** (Controllers), mantendo o código organizado.
 
