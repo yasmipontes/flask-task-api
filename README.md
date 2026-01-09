@@ -3,7 +3,7 @@
 ## 📋 Sobre o Projeto
 Uma **API RESTful** desenvolvida em **Python** com **Flask** para gerenciamento de tarefas. O projeto utiliza um banco de dados relacional **SQL** para persistência dos dados, simulando um ambiente de back-end real.
 
-Este projeto demonstra competências essenciais para a vaga, como:
+Este projeto demonstra:
 * Desenvolvimento de rotas e endpoints (GET, POST, PUT, DELETE).
 * Manipulação de Banco de Dados com ORM (SQLAlchemy).
 * Estruturação de respostas em JSON.
