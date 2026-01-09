@@ -1,33 +1,63 @@
 # 🚀 Task Manager API
 
-## 📋 Sobre o Projeto
-Uma **API RESTful** desenvolvida em **Python** com **Flask** para gerenciamento de tarefas. O projeto utiliza um banco de dados relacional **SQL** para persistência dos dados, simulando um ambiente de back-end real.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-2.0%2B-black)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-Este projeto demonstra:
-* Desenvolvimento de rotas e endpoints (GET, POST, PUT, DELETE).
-* Manipulação de Banco de Dados com ORM (SQLAlchemy).
-* Estruturação de respostas em JSON.
+## 📖 Sobre o Projeto
 
-## 🛠 Tecnologias
-* **Python 3**
-* **Flask** (Microframework Web)
-* **SQLAlchemy** (ORM para Banco de Dados)
-* **SQLite** (Banco de dados SQL em arquivo)
+O **Task Manager API** é um microsserviço desenvolvido para gerenciar o ciclo de vida de tarefas (To-Do List). 
 
-## 🔌 Endpoints da API
+O objetivo principal deste projeto foi construir uma **API RESTful** robusta, seguindo as melhores práticas de desenvolvimento Back-end, como a separação de responsabilidades, uso de ORM para segurança de dados e padronização de respostas em JSON.
 
-| Método | Rota | Descrição |
-| :--- | :--- | :--- |
-| `POST` | `/tasks` | Cria uma nova tarefa |
-| `GET` | `/tasks` | Lista todas as tarefas |
-| `PUT` | `/tasks/<id>` | Atualiza o status de uma tarefa |
-| `DELETE` | `/tasks/<id>` | Remove uma tarefa |
+Este projeto simula o back-end de uma aplicação real, pronta para ser consumida por qualquer Front-end (Web ou Mobile).
 
-## ⚙️ Como rodar
+---
 
-```bash
-# Instale as dependências
-pip install -r requirements.txt
+## ⚙️ Arquitetura e Decisões Técnicas
 
-# Execute a aplicação
-python app.py
+Durante o desenvolvimento, tomei decisões focadas em **escalabilidade** e **manutenibilidade**:
+
+* **Microframework Flask:** Escolhido por ser leve e permitir controle total sobre a construção das rotas e requisições HTTP.
+* **SQLAlchemy (ORM):** Utilizado para abstrair a camada de banco de dados. Ao manipular objetos Python em vez de SQL puro, aumentamos a segurança contra *SQL Injection* e facilitamos a manutenção do código.
+* **Design Pattern:** O código foi estruturado separando o **Modelo de Dados** (Representação da Tabela) das **Rotas** (Controllers), mantendo o código organizado.
+
+---
+
+## 🛠 Tech Stack
+
+* **Linguagem:** Python 3
+* **Framework Web:** Flask
+* **Database:** SQLite (Simplicidade local) / Abstraído via SQLAlchemy
+* **Testes de API:** Postman / Insomnia
+
+---
+
+## 🔌 Documentação da API
+
+A API segue os padrões REST, utilizando verbos HTTP para cada ação semântica.
+
+### 📝 Endpoints
+
+| Método | Endpoint | Descrição | Corpo da Requisição (JSON) |
+| :--- | :--- | :--- | :--- |
+| **POST** | `/tasks` | Cria uma tarefa | `{"title": "Estudar Python"}` |
+| **GET** | `/tasks` | Lista tarefas | *Nenhum* |
+| **PUT** | `/tasks/<id>` | Atualiza status | *Nenhum* (Alterna T/F) |
+| **DELETE**| `/tasks/<id>` | Remove tarefa | *Nenhum* |
+
+### 🔍 Exemplo de Resposta (JSON)
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Finalizar desafio técnico",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Estudar Flask",
+    "done": true
+  }
+]
